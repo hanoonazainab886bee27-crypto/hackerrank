@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+  
+    int digit_sum = 0;
+    
+    digit_sum += n % 10;          // Last digit
+    digit_sum += (n / 10) % 10;   // Fourth digit
+    digit_sum += (n / 100) % 10;  // Third digit
+    digit_sum += (n / 1000) % 10; // Second digit
+    digit_sum += (n / 10000) % 10; // First digit
+    
+    printf("%d\n", digit_sum);
+    
+    return 0;
+}
