@@ -1,0 +1,42 @@
+#include <iostream>
+#include <map>
+using namespace std;
+
+int main() {
+    int Q;
+    cin >> Q;
+    
+    map<string, int> m;  // Creates an empty map
+    
+    while (Q--) {
+        int type;
+        cin >> type;
+        
+        if (type == 1) {
+            // Add marks to a student
+            string name;
+            int marks;
+            cin >> name >> marks;
+            m[name] += marks;  // Adds marks to existing or creates new entry
+        }
+        else if (type == 2) {
+            // Erase student from map
+            string name;
+            cin >> name;
+            m.erase(name);
+        }
+        else if (type == 3) {
+            // Print marks of student (0 if not found)
+            string name;
+            cin >> name;
+            if (m.find(name) != m.end()) {
+                cout << m[name] << endl;
+            }
+            else {
+                cout << 0 << endl;
+            }
+        }
+    }
+    
+    return 0;
+}
