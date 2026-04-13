@@ -1,0 +1,25 @@
+import numpy
+
+# Set printing options for alignment consistency
+numpy.set_printoptions(legacy='1.13')
+
+def perform_array_math():
+    # Read N (rows) and M (columns)
+    n, m = map(int, input().split())
+    
+    # Read array A (N lines)
+    a = numpy.array([input().split() for _ in range(n)], int)
+    
+    # Read array B (N lines)
+    b = numpy.array([input().split() for _ in range(n)], int)
+    
+    # Perform and print required operations
+    print(numpy.add(a, b))
+    print(numpy.subtract(a, b))
+    print(numpy.multiply(a, b))
+    print(numpy.floor_divide(a, b))
+    print(numpy.mod(a, b))
+    print(numpy.power(a, b))
+
+if __name__ == '__main__':
+    perform_array_math()
