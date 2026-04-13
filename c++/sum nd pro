@@ -1,0 +1,27 @@
+import numpy
+
+def calculate_sum_and_product():
+    # Read N (rows) and M (columns)
+    try:
+        n, m = map(int, input().split())
+        
+        # Read the N rows to create the 2D array
+        # We use a list comprehension to read each row and convert to int
+        my_array = numpy.array([input().split() for _ in range(n)], int)
+        
+        # Step 1: Compute the sum along axis 0 (column-wise sum)
+        # For a 2x2 array [[1, 2], [3, 4]], axis 0 sum is [1+3, 2+4] = [4, 6]
+        sum_axis_0 = numpy.sum(my_array, axis=0)
+        
+        # Step 2: Compute the product of the resulting 1D array
+        # Product of [4, 6] is 4 * 6 = 24
+        result = numpy.prod(sum_axis_0)
+        
+        # Print the final scalar result
+        print(result)
+        
+    except EOFError:
+        pass
+
+if __name__ == '__main__':
+    calculate_sum_and_product()
