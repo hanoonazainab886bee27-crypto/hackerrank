@@ -1,0 +1,22 @@
+import sys
+
+def sort_key(c):
+    # Lowercase letters (priority 0)
+    if c.islower():
+        return (0, c)
+    # Uppercase letters (priority 1)
+    elif c.isupper():
+        return (1, c)
+    # Odd digits (priority 2)
+    elif c.isdigit() and int(c) % 2 != 0:
+        return (2, c)
+    # Even digits (priority 3)
+    else:
+        return (3, c)
+
+if __name__ == '__main__':
+    s = input().strip()
+    # Sort the string using the custom key function
+    sorted_chars = sorted(s, key=sort_key)
+    # Join the characters back into a string and print
+    print("".join(sorted_chars))
