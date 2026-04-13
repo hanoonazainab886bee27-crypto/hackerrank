@@ -1,0 +1,21 @@
+import numpy
+
+# Set printing options for alignment as per the requirement
+numpy.set_printoptions(legacy='1.13')
+
+def generate_eye_array():
+    # Read N (rows) and M (columns) from input
+    try:
+        n, m = map(int, input().split())
+        
+        # Generate the N x M array with 1s on the main diagonal
+        # k=0 is the default for the main diagonal
+        result = numpy.eye(n, m)
+        
+        # Print the resulting array
+        print(result)
+    except EOFError:
+        pass
+
+if __name__ == '__main__':
+    generate_eye_array()
