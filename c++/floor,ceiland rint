@@ -1,0 +1,21 @@
+import numpy
+
+# Set printing options for alignment consistency
+numpy.set_printoptions(legacy='1.13')
+
+def process_rounding():
+    # Read the input space-separated elements as a float array
+    try:
+        # Convert input string directly into a NumPy float array
+        a = numpy.array(input().split(), float)
+        
+        # Perform and print the rounding operations
+        print(numpy.floor(a))
+        print(numpy.ceil(a))
+        print(numpy.rint(a))
+        
+    except EOFError:
+        pass
+
+if __name__ == '__main__':
+    process_rounding()
