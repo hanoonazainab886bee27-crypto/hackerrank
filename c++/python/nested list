@@ -1,0 +1,25 @@
+if __name__ == "__main__":
+    n = int(input())
+    students = []
+    
+    # Store each student as [name, grade]
+    for _ in range(n):
+        name = input()
+        grade = float(input())
+        students.append([name, grade])
+    
+    # Step 1: Find the lowest grade
+    lowest_grade = min(student[1] for student in students)
+    
+    # Step 2: Create a new list excluding ALL students with the lowest grade
+    filtered_students = [s for s in students if s[1] != lowest_grade]
+    
+    # Step 3: Find the second lowest grade (now the minimum of remaining)
+    second_lowest = min(s[1] for s in filtered_students)
+    
+    # Step 4: Get all names with the second lowest grade
+    result = [s[0] for s in filtered_students if s[1] == second_lowest]
+    
+    # Step 5: Sort alphabetically and print each on a new line
+    for name in sorted(result):
+        print(name)
