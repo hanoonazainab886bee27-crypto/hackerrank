@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+class Employee {
+public:
+    void Salary() {
+        cout << "Calculating salary..." << endl;
+    }
+};
+class PermanentEmployee : public Employee {
+public:
+    void Salary(string role, int amount) {
+        cout << "Permanent Employee (" << role << ") Salary: " << amount << endl;
+    }
+};
+class DailyWageEmployee : public Employee {
+public:
+    void Salary(int hours, int total) {
+        cout << "Daily-Wage Employee Salary (Hours worked: " << hours << "): " << total << endl;
+    }
+};
+int main()
+{
+    PermanentEmployee p;
+    DailyWageEmployee d;
+    p.Salary("Manager", 50000);
+    p.Salary("Developer", 40000);
+    d.Salary(40, 620);
+    d.Salary(30, 600);
+    return 0;
+}
