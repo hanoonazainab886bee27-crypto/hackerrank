@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+template<class T>
+void largest(T a,T b)
+{
+   if(a>b){
+     cout<<"greatest value is:"<<a<<endl;
+   }
+      else{
+      cout<<"the greatest value is:"<<b<<endl;
+}
+}
+int main()
+{
+   largest<float>(9.9,10.9);
+   largest<int>(49,10);
+   largest<char>('n','h');
+return 0;
+}
