@@ -1,0 +1,58 @@
+#include<iostream>
+#include<exception>
+using namespace std;
+class average
+{
+   private:
+      double total;
+      int count
+         double default value;
+   public:
+      average()
+         total=0
+         cout=0
+         default value=0
+         void add value(double value)
+         {
+            if(value<0)
+               throw invalid("negative value not allowed");
+            total+ =value;
+            ++count;
+         }
+      double compute()
+      {
+         if(count==0)
+            throw runtime_error("divide by zero ;no vale added");
+               return total/count;
+      }
+      void setdefault (double def val)
+      {
+         default value=def val;
+         double get average()
+         {
+            try
+            {
+               return compute();
+            }
+            catch (const runtime _error)
+            {
+               cout<<"caught execption"<<endl
+                  cout<<"rethrowing execption"<<endl;
+              throw;
+            }
+         }
+      };
+      int main()
+      {
+         average avg;
+         avg.set default(10.0)
+            try
+            {
+               cout<<"average:"<<avg.getaverage()<<endl;
+            }
+         catch(const exception)
+         {
+            cout<<"handled in main":<<endl
+         }
+         return 0:
+      }
